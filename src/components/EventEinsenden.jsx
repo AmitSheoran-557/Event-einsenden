@@ -93,7 +93,7 @@ const EventEinsenden = () => {
                             {errors.Preis && <p className="text-red-500 text-sm">{errors.Preis.message}</p>}
                         </div>
                     </div>
-                    <textarea name="description" id="description" className='text-primary lg:mb-5 md:mb-4 mb-3 resize-none w-full pt-[55.5px] pb-[33.17px] max-sm:pt-9 max-sm:pb-4 max-sm:font-semibold px-4 outline-none border-[0.5px] border-lightGray rounded-[30px] font-bold text-sm leading-[21px]' placeholder='Details zur Veranstaltung'></textarea>
+                    <textarea name="description" id="description" className='text-primary lg:mb-[14px] mb-3 resize-none w-full pt-[55.5px] pb-[33.17px] max-sm:pt-9 max-sm:pb-4 max-sm:font-semibold px-4 outline-none border-[0.5px] border-lightGray rounded-[30px] font-bold text-sm leading-[21px]' placeholder='Details zur Veranstaltung'></textarea>
                     <div className='flex justify-center'>
                         <button type="submit" className="w-full max-w-[361px] button-bg-gradient lg:text-base text-sm !tracking-[-1%] text-center font-bold text-white rounded-[30px] lg:py-4 py-3 mx-auto">
                             Event einsenden
