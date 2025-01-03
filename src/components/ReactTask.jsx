@@ -36,23 +36,23 @@ const ReactTask = () => {
 
 
     return (
-        <div className='bg-black min-h-screen py-12'>
-            <div className='max-w-[1280px] mx-auto flex flex-col items-center justify-center'>
+        <div className='bg-black min-h-screen lg:py-12 py-10 flex items-center justify-center'>
+            <div className='max-w-[1280px] mx-auto flex flex-col items-center justify-center px-4'>
                 <div className='pb-8 text-white'>
                     <h2 className='text-center lg:text-3xl text-2xl mb-3'>This is a Funtion with two arguments and two numbers are added</h2>
                     <p className='text-center text-xl'>The result of {num1} + {num2} = {result}</p>
                 </div>
 
-                <div className='text-white pb-8'>
-                    <h2>Table of 2:</h2>
-                    <ul>
+                <div className='text-white pb-8 text-xl flex flex-col items-center'>
+                    <h2 className='lg:text-3xl text-2xl text-center mb-3'>Table of 2:</h2>
+                    <ul className='text-start text-xl'>
                         {printTableOfTwo()}
                     </ul>
                 </div>
 
-                <div className='text-white'>
-                    <h2>Stars with 4 Rows and 5 Columns</h2>
-                    <ul>
+                <div className='text-white mx-auto'>
+                    <h2 className='lg:text-3xl text-2xl text-center mb-3'>Stars with 4 Rows and 5 Columns</h2>
+                    <ul className='text-center text-xl'>
                         {printStars()}
                     </ul>
                 </div>
