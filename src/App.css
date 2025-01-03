@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  font-family: "Open Sans", serif;
+  scroll-behavior: smooth !important;
+}
+
+.button-bg-gradient {
+  background: linear-gradient(80.25deg, #0071bb 0.38%, #39a3e7 98.6%);
+}
+select {
+  appearance: none;
+  background-image: url("./assets/images/svg/arrow-icon-img.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px top 50%;
+  cursor: pointer;
+}
