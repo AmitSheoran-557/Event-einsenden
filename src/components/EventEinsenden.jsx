@@ -9,9 +9,14 @@ const EventEinsenden = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+        console.log(data);
+        reset();
+        setImages([]);
+    };
 
 
     const [images, setImages] = useState([]);
@@ -38,13 +43,12 @@ const EventEinsenden = () => {
                 <div className='max-w-[763px] flex overflow-auto items-center w-full lg:mb-5 md:mb-4 mb-3 py-[7.2px] px-4 rounded-[30px] border-[0.5px] border-dashed bg-white'>
 
                     <div className='flex lg:gap-4 gap-3 items-center'>
-                        <div className='flex flex-wrap lg:gap-4 gap-3'>
-                            {images.map((image, index) => (
-                                <div key={index} className="lg:size-24 md:size-14 size-10 flex justify-center items-center lg:rounded-[24px] rounded-2xl overflow-hidden">
-                                    <img src={image} alt={`Selected ${index}`} className="w-full h-full object-cover flex-wrap" />
-                                </div>
-                            ))}
-                        </div>
+
+                        {images.map((image, index) => (
+                            <div key={index} className="lg:size-24 md:size-16 size-14 flex justify-center items-center lg:rounded-[24px] rounded-2xl overflow-hidden">
+                                <img src={image} alt={`Selected ${index}`} className="w-full h-full object-cover flex-wrap" />
+                            </div>
+                        ))}
                         <div className='lg:py-[30px] md:py-6 sm:py-5 py-4 lg:px-[38px] md:px-6 sm:px-5 px-4 border-[0.5px] border-dashed max-h-20 flex justify-center items-center rounded-[20px]'
                             onClick={() => document.getElementById('file-input').click()} >
                             <PlusIcon />
@@ -57,7 +61,7 @@ const EventEinsenden = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className='max-w-[763px] w-full mx-auto'>
 
                     <div className=' border-[0.5px] rounded-[30px] max-w-[763px] bg-white border-lightGray lg:mb-5 md:mb-4 mb-3 relative'>
-                        <select className="w-full text-primary lg:py-[18px] md:py-3 py-2 font-bold max-w-[763px] outline-none lg:!text-sm lg:px-4 px-3 rounded-full !text-xs">
+                        <select className="w-full text-primary lg:py-[18px] py-3 font-bold max-w-[763px] outline-none lg:!text-sm lg:px-4 px-3 rounded-full !text-xs">
                             <option className='max-w-[763px]' value="Kategorie">Kategorie</option>
                             <option className='max-w-[763px]' value="option2">option 2</option>
                             <option className='max-w-[763px]' value="option3">option 3</option>
@@ -89,11 +93,7 @@ const EventEinsenden = () => {
                             {errors.Preis && <p className="text-red-500 text-sm">{errors.Preis.message}</p>}
                         </div>
                     </div>
-                    <div className='lg:mb-5 md:mb-4 mb-3'>
-                        <input {...register("Details", { required: "Details is required", })} placeholder="Details zur Veranstaltung" type="text"
-                            className="w-full lg:px-4 px-3 lg:py-[17.5px] lg:text-sm text-xs py-3 border-[0.5px] border-lightGray text-primary font-bold rounded-[30px] outline-none max-w-[763px] max-h-[132px] h-full lg:min-h-[132px] min-h-24" />
-                        {errors.Details && <p className="text-red-500 text-sm">{errors.Details.message}</p>}
-                    </div>
+                    <textarea name="description" id="description" className='text-primary resize-none w-full pt-[55.5px] pb-[33.17px] max-sm:pt-9 max-sm:pb-4 max-sm:font-semibold px-4 outline-none border-[0.5px] border-lightGray rounded-[30px] font-bold text-sm leading-[21px]' placeholder='Details zur Veranstaltung'></textarea>
                     <div className='flex justify-center'>
                         <button type="submit" className="w-full max-w-[361px] button-bg-gradient lg:text-base text-sm !tracking-[-1%] text-center font-bold text-white rounded-[30px] lg:py-4 py-3 mx-auto">
                             Event einsenden
