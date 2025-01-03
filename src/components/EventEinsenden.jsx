@@ -49,7 +49,7 @@ const EventEinsenden = () => {
                                 <img src={image} alt={`Selected ${index}`} className="w-full h-full object-cover flex-wrap" />
                             </div>
                         ))}
-                        <div className='lg:py-[30px] md:py-6 sm:py-5 py-4 lg:px-[38px] md:px-6 sm:px-5 px-4 border-[0.5px] border-dashed max-h-20 flex justify-center items-center rounded-[20px]'
+                        <div className='lg:py-[30px] md:py-6 sm:py-5 py-4 cursor-pointer lg:px-[38px] md:px-6 sm:px-5 px-4 border-[0.5px] border-dashed max-h-20 flex justify-center items-center rounded-[20px]'
                             onClick={() => document.getElementById('file-input').click()} >
                             <PlusIcon />
                             <input id="file-input" type="file" accept="image/*" disabled={images.length >= 3} onChange={handleImageSelect} className="hidden" multiple />
@@ -68,7 +68,7 @@ const EventEinsenden = () => {
                         </select>
                     </div>
 
-                    <div className='flex sm:flex-row flex-col max-md:gap-4 sm:justify-between justify-center items-center lg:mb-5 md:mb-4 mb-3'>
+                    <div className='flex sm:flex-row flex-col max-lg:gap-4 sm:justify-between justify-center items-center lg:mb-5 md:mb-4 mb-3'>
                         <div className='md:max-w-[371px] w-full'>
                             <input {...register("Titel", { required: "Titel is required" })} placeholder="Titel" type="text"
                                 className="w-full lg:px-4 px-3 lg:py-[17.2px] lg:text-sm text-xs py-3 border-[0.5px] border-lightGray text-primary font-bold rounded-[30px] outline-none" />
@@ -81,7 +81,7 @@ const EventEinsenden = () => {
                         </div>
                     </div>
 
-                    <div className='flex sm:flex-row flex-col max-md:gap-4 sm:justify-between justify-center items-center lg:mb-5 md:mb-4 mb-3'>
+                    <div className='flex sm:flex-row flex-col max-lg:gap-4 sm:justify-between justify-center items-center lg:mb-5 md:mb-4 mb-3'>
                         <div className='md:max-w-[371px] w-full'>
                             <input {...register("Standort", { required: "Standort is required" })} placeholder="Standort" type="text"
                                 className="w-full lg:px-4 px-3 lg:py-[17.2px] lg:text-sm text-xs py-3 border-[0.5px] border-lightGray text-primary font-bold rounded-[30px] outline-none" />
